@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Sign Up</h2>
+    <form action="{{ url_for('signup') }}" method="POST">
+		<label for="name">Name:</label>
+		<input type = "text" id = "name", name="name" required><br>
+        <label for="email_id">Email ID:</label>
+        <input type="text" id="email_id" name="email_id" required><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="password" id="confirm_password" name="confirm_password" required><br>
+        <input type="submit" value="Sign Up">
+    </form>
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+{% endblock %}
